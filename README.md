@@ -7,8 +7,11 @@ It works in Matlab 5.3.1 as well as in later versions.
 Main examples are:
 
 -) Recursive Least Squares (RLS).
+
 -) Simple Windowed Regression (LLS).
+
 -) Local Weighted Regression (LWR).
+
 -) Fourier Transform Regression (FTR).
 
 Two example on Linear and Nonlinear Aircraft
