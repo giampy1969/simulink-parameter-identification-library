@@ -1,0 +1,24 @@
+<productinfo>
+
+<matlabrelease>11</matlabrelease>
+<name>Parameter Identification Library</name>
+<type>blockset</type>
+<icon>$toolbox/simulink/simulink/simulinkicon.gif</icon>
+
+<list>
+
+<listitem>
+<label>Help</label>
+<callback>doc pil/</callback>
+<icon>$toolbox/matlab/icons/book_sim.gif</icon>
+</listitem>
+
+<listitem>
+<label>Launch PIL Blockset</label>
+<callback>pil</callback>
+<icon>$toolbox/simulink/simulink/simulinkicon.gif</icon>
+</listitem>
+
+</list>
+
+</productinfo>

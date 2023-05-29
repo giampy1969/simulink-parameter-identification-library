@@ -1,0 +1,583 @@
+Model {
+  Name			  "beapil"
+  Version		  3.00
+  SimParamPage		  "WorkspaceI/O"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0"
+  StopTime		  "15"
+  SolverMode		  "Auto"
+  Solver		  "ode45"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "t"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Thu Feb 15 13:56:37 2001"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "campa"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Dec 19 22:37:09 2008"
+  ModelVersionFormat	  "1.%<AutoIncrement:67>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "beapil"
+    Location		    [302, 94, 972, 668]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "A"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [265, 105, 295, 135]
+      Orientation	      "left"
+      SourceBlock	      "simulink3/Math/Matrix\nGain"
+      SourceType	      "Matrix Gain"
+      K			      "alg"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "B"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [155, 65, 185, 95]
+      SourceBlock	      "simulink3/Math/Matrix\nGain"
+      SourceType	      "Matrix Gain"
+      K			      "blg"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Chirp Signal"
+      Ports		      [0, 1, 0, 0, 0]
+      Position		      [40, 65, 70, 95]
+      SourceBlock	      "simulink3/Sources/Chirp Signal"
+      SourceType	      "chirp"
+      f1		      "0.1"
+      T			      "100"
+      f2		      "1"
+    }
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
+      Position		      [40, 130, 60, 150]
+      ShowName		      off
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Double click here before\n starting the simulat"
+"ion"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [37, 24, 103, 49]
+      ForegroundColor	      "magenta"
+      DropShadow	      on
+      ShowName		      off
+      OpenFcn		      "load beadata;"
+      ShowPortLabels	      off
+      MaskDisplay	      "disp('Load Model')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Double click here before\n starting the simul"
+"ation"
+	Location		[6, 435, 134, 508]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "FTR"
+      Ports		      [3, 1, 0, 0, 0]
+      Position		      [470, 351, 530, 429]
+      BackgroundColor	      "orange"
+      SourceBlock	      "pil/Only Theta/FTR"
+      SourceType	      "Fourier Transform Regression"
+      ths		      "[3 2]"
+      w			      "2*pi*linspace(0.02,1.8,32)'"
+      T			      "0.02"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "FTR-TD"
+      Ports		      [3, 1, 0, 0, 0]
+      Position		      [470, 446, 530, 524]
+      BackgroundColor	      "orange"
+      SourceBlock	      "pil/Only Theta/FTR-TD"
+      SourceType	      "Fourier Transform Regression (derivative in Tim"
+"e Domain)"
+      ths		      "[3 2]"
+      w			      "2*pi*linspace(0.02,1.8,32)'"
+      T			      "0.02"
+    }
+    Block {
+      BlockType		      Ground
+      Name		      "Ground"
+      Position		      [350, 205, 370, 225]
+      ForegroundColor	      "blue"
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [265, 65, 295, 95]
+      ShowName		      off
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "LWR-RD"
+      Ports		      [3, 2, 0, 0, 0]
+      Position		      [470, 252, 530, 328]
+      BackgroundColor	      "lightBlue"
+      SourceBlock	      "pil/Theta & Cov/LWR-RD"
+      SourceType	      "Local Weighted Regression with Retention and De"
+"letion"
+      ths		      "[3 2]"
+      n			      "50"
+      sig		      "1"
+      Tol		      "1e-6"
+      x0		      "1"
+      T			      "0.02"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [350, 146, 355, 184]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "NRLS"
+      Ports		      [3, 1, 0, 0, 0]
+      Position		      [470, 151, 530, 229]
+      BackgroundColor	      "darkGreen"
+      SourceBlock	      "pil/Only Theta/NRLS"
+      SourceType	      "Normalized Recursive Least Squares Regression"
+      ths		      "[3 2]"
+      lam		      "0.99"
+      T			      "0.02"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [205, 70, 225, 90]
+      ForegroundColor	      "red"
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|++"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum3"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [395, 155, 415, 175]
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "++|"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator"
+      Position		      [570, 300, 590, 320]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      Position		      [75, 130, 90, 150]
+      ShowName		      off
+      VariableName	      "t"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "0.02"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace1"
+      Position		      [570, 180, 610, 200]
+      ShowName		      off
+      VariableName	      "theta1"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "0.02"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace2"
+      Position		      [570, 260, 610, 280]
+      ShowName		      off
+      VariableName	      "theta2"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "0.02"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace3"
+      Position		      [570, 380, 610, 400]
+      ShowName		      off
+      VariableName	      "theta3"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "0.02"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace4"
+      Position		      [570, 475, 610, 495]
+      ShowName		      off
+      VariableName	      "theta4"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "0.02"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "noise"
+      Ports		      [0, 1, 0, 0, 0]
+      Position		      [350, 107, 380, 123]
+      SourceBlock	      "simulink3/Sources/Band-Limited\nWhite Noise"
+      SourceType	      "Continuous White Noise."
+      Cov		      "[1 1 1]*1e-5"
+      Ts		      "0.02"
+      seed		      "[1 2 3]"
+    }
+    Line {
+      SrcBlock		      "B"
+      SrcPort		      1
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      DstBlock		      "To Workspace"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "NRLS"
+      SrcPort		      1
+      DstBlock		      "To Workspace1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "FTR"
+      SrcPort		      1
+      DstBlock		      "To Workspace3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Ground"
+      SrcPort		      1
+      Points		      [70, 0]
+      Branch {
+	DstBlock		"NRLS"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 100]
+	Branch {
+	  DstBlock		  "LWR-RD"
+	  DstPort		  3
+	}
+	Branch {
+	  Points		  [0, 100]
+	  Branch {
+	    DstBlock		    "FTR"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 95]
+	    DstBlock		    "FTR-TD"
+	    DstPort		    3
+	  }
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Sum3"
+      SrcPort		      1
+      Points		      [30, 0]
+      Branch {
+	DstBlock		"NRLS"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 100]
+	Branch {
+	  DstBlock		  "LWR-RD"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 100]
+	  Branch {
+	    DstBlock		    "FTR"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 95]
+	    DstBlock		    "FTR-TD"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "FTR-TD"
+      SrcPort		      1
+      DstBlock		      "To Workspace4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "LWR-RD"
+      SrcPort		      2
+      DstBlock		      "Terminator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "LWR-RD"
+      SrcPort		      1
+      DstBlock		      "To Workspace2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "noise"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "Sum3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      DstBlock		      "Sum3"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Integrator"
+      SrcPort		      1
+      Points		      [20, 0; 0, 40]
+      Branch {
+	DstBlock		"A"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 35]
+	Branch {
+	  Points		  [0, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 35]
+	  Branch {
+	    DstBlock		    "NRLS"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 100]
+	    Branch {
+	      DstBlock		      "LWR-RD"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, 100]
+	      Branch {
+		DstBlock		"FTR"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 95]
+		DstBlock		"FTR-TD"
+		DstPort			2
+	      }
+	    }
+	  }
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      DstBlock		      "Integrator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Chirp Signal"
+      SrcPort		      1
+      Points		      [60, 0]
+      Branch {
+	DstBlock		"B"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 95]
+	DstBlock		"Mux"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "A"
+      SrcPort		      1
+      Points		      [-45, 0]
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Annotation {
+      Position		      [110, 474]
+      ForegroundColor	      "red"
+      Text		      "Use beaplot to see the results      \nafter the"
+" simulation is terminated"
+    }
+    Annotation {
+      Position		      [122, 279]
+      Text		      "This scheme identifies the A and B \nmatrices i"
+"n xdot = [A B]*[x;u].          \n        \nTransposing the equation leads to:"
+"  \nxdot'= [x;u']'*[A B]'=[x;u']'*Theta       \nthe regressor [x;u] is fed in"
+"to the      \nfirst input of the blocks, labeled \"x\"  \nwhile x is fed to t"
+"he input \"Ez\",       \nwhose time derivative is taken         \ninside the "
+"block.                               "
+    }
+  }
+}
