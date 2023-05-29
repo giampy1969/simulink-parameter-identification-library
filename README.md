@@ -1,5 +1,7 @@
 # simulink-parameter-identification-library
 
+[![View Parameter Identification Library on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/1013-parameter-identification-library)
+
 This Simulink&reg; library is a collection of blocks that perform Parameter Identification 
 through the most rewarded frequency and time domain linear regression methods. 
 It works in Matlab 5.3.1 as well as in later versions.
